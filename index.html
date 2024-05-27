@@ -31,12 +31,12 @@
         productVersion: "1.0",
       });
 
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
-      window.addEventListener("resize", function() {
-          var width = window.innerWidth;
-          var height = window.innerHeight;
-          unityInstance.SendMessage('DynamicWrap', 'SetResolution', width + ',' + height);
-      });
+      // var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
+      // window.addEventListener("resize", function() {
+      //     var width = window.innerWidth;
+      //     var height = window.innerHeight;
+      //     unityInstance.SendMessage('DynamicWrap', 'SetResolution', width + ',' + height);
+      // });
 
       window.Telegram.WebApp.ready();
 
