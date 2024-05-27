@@ -11,7 +11,7 @@
     </style>
   </head>
   <body >
-    <script src="Build/builds.loader.js"></script>
+    <script src="Build/Builds.loader.js"></script>
     <canvas id="unity-canvas" tabindex="-1"></canvas>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -30,9 +30,9 @@
       }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/builds.data",
-        frameworkUrl: "Build/builds.framework.js",
-        codeUrl: "Build/builds.wasm",
+        dataUrl: "Build/Builds.data",
+        frameworkUrl: "Build/Builds.framework.js",
+        codeUrl: "Build/Builds.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Get Unity Code",
         productName: "PerfectHotel",
