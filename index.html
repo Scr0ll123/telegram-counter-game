@@ -20,8 +20,16 @@
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
-
       }
+
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
+      
+      window.addEventListener("resize", function() {
+          var width = window.innerWidth;
+          var height = window.innerHeight;
+          unityInstance.SendMessage('DynamicWrap', 'SetResolution', width + ',' + height);
+      });
+
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/Builds.data",
         frameworkUrl: "Build/Builds.framework.js",
@@ -32,12 +40,7 @@
         productVersion: "1.0",
       });
 
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
-      window.addEventListener("resize", function() {
-          var width = window.innerWidth;
-          var height = window.innerHeight;
-          unityInstance.SendMessage('DynamicWrap', 'SetResolution', width + ',' + height);
-      });
+      
 
       window.Telegram.WebApp.ready();
 
