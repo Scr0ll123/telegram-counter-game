@@ -18,8 +18,8 @@
         document.getElementsByTagName('head')[0].appendChild(meta);
 
         var canvas = document.querySelector("#unity-canvas");
-        canvas.style.width = "100vw";
-        canvas.style.height = "100vh";
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
         canvas.style.position = "fixed";
 
         document.body.style.textAlign = "left";
@@ -33,6 +33,14 @@
         productName: "TelegramCounter",
         productVersion: "1.0",
       });
+
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
+      window.addEventListener("resize", function() {
+          var width = window.innerWidth;
+          var height = window.innerHeight;
+          unityInstance.SendMessage('DynamicWrap', 'SetResolution', width + ',' + height);
+      });
+
       window.Telegram.WebApp.ready();
 
     </script>
