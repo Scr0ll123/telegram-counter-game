@@ -11,7 +11,7 @@
     </style>
   </head>
   <body >
-    <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
     <script src="Build/builds.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -40,6 +40,7 @@
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
+
       window.Telegram.WebApp.ready();
     </script>
   </body>
